@@ -1,20 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { Button } from "@repo/ui";
+import { StyleSheet, View } from "react-native";
+import { Provider } from "react-redux"
+import { Counter, store } from "@repo/ui";
 
 export default function Native() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Native</Text>
-      <Button
-        onClick={() => {
-          console.log("Pressed!");
-          alert("Pressed!");
-        }}
-        text="Boop"
-      />
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <View style={styles.container}>
+        <Counter />
+      </View>
+    </Provider>
   );
 }
 

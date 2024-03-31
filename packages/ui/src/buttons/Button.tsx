@@ -6,12 +6,12 @@ import {
   Text,
 } from "react-native";
 
-export interface ButtonProps {
+export interface IButtonProps {
   text: string;
   onClick?: (event: GestureResponderEvent) => void;
 }
 
-export function Button({ text, onClick }: ButtonProps) {
+export function Button({ text, onClick }: IButtonProps) {
   return (
     <TouchableOpacity style={styles.button} onPress={onClick}>
       <Text style={styles.text}>{text}</Text>
